@@ -22,14 +22,12 @@
 extract_function_examples <- function(package_name, function_name) {
   tryCatch(
     {
-      # Locate the Rd database file for the package
-      rdbfile <- file.path(find.package(package_name), "help", package_name)
-
-      # Fetch the documentation for the specific function
-      rdb <- tools:::fetchRdDB(rdbfile, key = function_name)
-      if (is.null(rdb)) {
+      # Fetch the documentation using Rd_db (exported function)
+      rd_db <- tools::Rd_db(package_name)
+      if (is.null(rd_db) || !function_name %in% names(rd_db)) {
         return(NA)
       }
+      rdb <- rd_db[[function_name]]
 
       # Extract examples using tools::Rd2ex
       examples_text <- capture.output(tools::Rd2ex(rdb))

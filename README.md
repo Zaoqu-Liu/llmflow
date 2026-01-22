@@ -35,7 +35,7 @@ pak::pak("Zaoqu-Liu/llmflow")
 
 ## Dependencies
 
-The package requires [ellmer](https://github.com/hadley/ellmer) for LLM communication:
+The package requires [ellmer](https://github.com/tidyverse/ellmer) for LLM communication:
 
 ```r
 install.packages("ellmer")
