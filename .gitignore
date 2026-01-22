@@ -1,0 +1,35 @@
+# R
+.Rhistory
+.Rdata
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Package build
+*.tar.gz
+*.Rcheck/
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+
+# Documentation build
+docs/
+inst/doc/
+
+# Coverage
+covr/
+codecov.yml
+
+# API keys (never commit!)
+.Renviron

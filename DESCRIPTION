@@ -1,0 +1,35 @@
+Package: llmflow
+Type: Package
+Title: LLM-R Integration with ReAct Workflow Automation
+Version: 3.0.1
+Authors@R: person("Zaoqu", "Liu", 
+                  email = "liuzaoqu@163.com", 
+                  role = c("aut", "cre"),
+                  comment = c(ORCID = "0000-0002-0452-742X"))
+Description: Provides a framework for integrating Large Language 
+    Models (LLMs) with R programming through workflow automation. 
+    Built on the ReAct (Reasoning and Acting) architecture, enables 
+    bi-directional communication between LLMs and R environments. 
+    Features include automated code generation and execution, intelligent 
+    error handling with retry mechanisms, persistent session management, 
+    structured JSON output validation, and context-aware conversation management.
+License: GPL (>= 3)
+Encoding: UTF-8
+URL: https://github.com/Zaoqu-Liu/llmflow
+BugReports: https://github.com/Zaoqu-Liu/llmflow/issues
+RoxygenNote: 7.3.3
+Depends: 
+    R (>= 4.1.0)
+Imports: 
+    callr,
+    cli,
+    glue,
+    jsonlite,
+    jsonvalidate
+Suggests:
+    ellmer,
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Config/testthat/edition: 3
