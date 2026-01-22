@@ -695,7 +695,7 @@ execute_r_action <- function(action, r_session, verbose, max_observation_length 
     {
       session_clone <- r_session$clone()
       output <- session_clone$run_with_output(
-        function(code) eval(parse(text = code), envir = .GlobalEnv),
+        function(code) eval(parse(text = code), envir = globalenv()),
         args = list(code = clean_code)
       )
 
@@ -1196,7 +1196,7 @@ get_session_info <- function(r_session) {
       session_data <- r_session$run(function() {
         list(
           loaded_packages = if (is.null(sessionInfo()$otherPkgs)) character(0) else names(sessionInfo()$otherPkgs),
-          defined_objects = ls(envir = .GlobalEnv)
+          defined_objects = ls(envir = globalenv())
         )
       })
       return(session_data)

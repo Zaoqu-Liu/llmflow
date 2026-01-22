@@ -1,6 +1,10 @@
+# llmflow 3.0.2
+
+* Fixed CRAN NOTE: replaced `.GlobalEnv` with `globalenv()` function calls
+
 # llmflow 3.0.1
 
-Initial CRAN release.
+Initial CRAN submission.
 
 ## Features
 

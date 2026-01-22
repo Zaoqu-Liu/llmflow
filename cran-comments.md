@@ -1,6 +1,6 @@
 ## R CMD check results
 
-0 errors | 0 warnings | 2 notes
+0 errors | 0 warnings | 1 note
 
 ## Test environments
 
@@ -14,21 +14,6 @@
 
 ### NOTE: New submission
 This is the first CRAN submission of llmflow.
-
-### NOTE: Global environment assignment
-The package intentionally uses `assign(..., envir = .GlobalEnv)` in 
-`response_to_r()` function. This is essential functionality that allows 
-LLM-generated R code to return computed objects (data frames, models, 
-plots, etc.) to the user's interactive R session.
-
-This behavior is analogous to:
-- `source(file, local = FALSE)` which evaluates code in global environment
-- `load()` which loads saved objects into global environment
-- Interactive R sessions where user-created objects persist
-
-Without this capability, the package cannot fulfill its core purpose of 
-enabling LLMs to generate and execute R code that produces usable results 
-for the user. The function is clearly documented about this behavior.
 
 ## Dependencies
 

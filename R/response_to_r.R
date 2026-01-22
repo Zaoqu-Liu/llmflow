@@ -299,12 +299,13 @@ setup_evaluation_session <- function(evaluate_code, r_session_options, pkgs_to_u
         new_objects_to_load <- objects_to_use[new_objects]
         new_loaded_objects <- evaluation_session$run(
           function(objects_to_load) {
+            target_env <- globalenv()
             for (i in seq_along(objects_to_load)) {
               obj <- objects_to_load[[i]]
               obj_name <- names(objects_to_load)[i]
-              assign(obj_name, obj, envir = .GlobalEnv)
+              assign(obj_name, obj, envir = target_env)
             }
-            ls(envir = .GlobalEnv)
+            ls(envir = target_env)
           },
           args = list(objects_to_load = new_objects_to_load)
         )
@@ -359,12 +360,13 @@ setup_evaluation_session <- function(evaluate_code, r_session_options, pkgs_to_u
       if (length(objects_to_use) > 0) {
         loaded_objects <- evaluation_session$run(
           function(objects_to_use) {
+            target_env <- globalenv()
             for (i in seq_along(objects_to_use)) {
               obj <- objects_to_use[[i]]
               obj_name <- names(objects_to_use)[i]
-              assign(obj_name, obj, envir = .GlobalEnv)
+              assign(obj_name, obj, envir = target_env)
             }
-            ls(envir = .GlobalEnv)
+            ls(envir = target_env)
           },
           args = list(objects_to_use = objects_to_use)
         )
@@ -415,13 +417,14 @@ get_session_info <- function(session) {
             names(session_info$otherPkgs)
           }
 
-          # Get objects in global environment
-          all_objects <- ls(envir = .GlobalEnv)
+          # Get objects in session environment
+          session_env <- globalenv()
+          all_objects <- ls(envir = session_env)
           object_info <- if (length(all_objects) > 0) {
             sapply(all_objects, function(obj_name) {
               tryCatch(
                 {
-                  obj <- get(obj_name, envir = .GlobalEnv)
+                  obj <- get(obj_name, envir = session_env)
                   obj_class <- class(obj)[1]
 
                   # Add dimension information for different object types
@@ -699,7 +702,7 @@ retry_r_run <- function(chat_obj, extracted_code, parsed_code, start_turn, max_i
   clone_session <- evaluation_session$clone()
   output <- clone_session$run_with_output(
     function(r_code) {
-      eval(parse(text = r_code), envir = .GlobalEnv)
+      eval(parse(text = r_code), envir = globalenv())
     },
     args = list(r_code = extracted_code)
   )
@@ -743,7 +746,7 @@ retry_r_run <- function(chat_obj, extracted_code, parsed_code, start_turn, max_i
       clone_session <- evaluation_session$clone()
       output <- clone_session$run_with_output(
         function(r_code) {
-          eval(parse(text = r_code), envir = .GlobalEnv)
+          eval(parse(text = r_code), envir = globalenv())
         },
         args = list(r_code = extracted_code)
       )
@@ -792,7 +795,7 @@ retry_r_run <- function(chat_obj, extracted_code, parsed_code, start_turn, max_i
       clone_session <- evaluation_session$clone()
       output <- clone_session$run_with_output(
         function(r_code) {
-          eval(parse(text = r_code), envir = .GlobalEnv)
+          eval(parse(text = r_code), envir = globalenv())
         },
         args = list(r_code = extracted_code)
       )
@@ -840,7 +843,7 @@ retry_r_run <- function(chat_obj, extracted_code, parsed_code, start_turn, max_i
       clone_session <- evaluation_session$clone()
       output <- clone_session$run_with_output(
         function(r_code) {
-          eval(parse(text = r_code), envir = .GlobalEnv)
+          eval(parse(text = r_code), envir = globalenv())
         },
         args = list(r_code = extracted_code)
       )
