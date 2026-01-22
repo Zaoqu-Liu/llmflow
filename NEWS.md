@@ -1,38 +1,22 @@
 # llmflow 3.0.1
 
-## New Features
+Initial CRAN release.
 
-* Added `AutoFlow()` function combining RAG documentation retrieval with ReAct workflow execution
-* Support for dual-LLM architecture to optimize cost and performance
-* Enhanced `react_r()` with smart history management and context summarization
+## Features
+
+* `AutoFlow()`: Complete workflow combining retrieval-augmented generation (RAG) with ReAct execution
+* `react_r()`: ReAct loop implementation with smart history management and context summarization
+* `response_to_r()`: LLM-to-R code generation and execution in isolated sessions
+* `response_as_json()`: Structured JSON output with schema validation
+* `retrieve_docs()`: R function documentation retrieval for RAG workflows
+
+## Architecture
+
+* Dual-LLM support for optimized cost and performance
 * Error escalation and task degradation strategies
 * Intermediate result protection near turn limits
-* Comprehensive execution metrics and error analysis
-
-## Improvements
-
 * Session continuity via `existing_session` parameter
-* Improved error messages and recovery suggestions
-* Performance metrics in ReAct results
-* Support for custom objects via `objects_to_use`
 
-## Breaking Changes
+## Notes
 
-* Removed `extract_package_docs()`, `extract_function_docs()`, `extract_docs_from_tarball()`, and `generate_qa_from_docs()`. These functions are now available in the `llmtools` package.
-
-# llmflow 2.0.0
-
-## New Features
-
-* Added `response_to_r()` for LLM-to-R code generation and execution
-* Added `extract_chat_history()` for conversation management
-* Added `prompt_from_history()` for context building
-
-## Improvements
-
-* Improved JSON extraction with nested object support
-* Enhanced code parsing and validation
-
-# llmflow 1.0.0
-
-* Initial release
+* Functions `extract_package_docs()`, `extract_function_docs()`, `extract_docs_from_tarball()`, and `generate_qa_from_docs()` have been moved to the separate `llmtools` package.

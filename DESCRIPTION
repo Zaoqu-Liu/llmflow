@@ -1,6 +1,6 @@
 Package: llmflow
 Type: Package
-Title: Reasoning and Acting Workflow for Automated R Analysis
+Title: Reasoning and Acting Workflow for Automated Data Analysis
 Version: 3.0.1
 Authors@R: person("Zaoqu", "Liu", 
                   email = "liuzaoqu@163.com", 
