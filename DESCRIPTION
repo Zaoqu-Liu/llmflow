@@ -1,6 +1,6 @@
 Package: llmflow
 Type: Package
-Title: 'LLM'-R Integration with 'ReAct' Workflow Automation
+Title: Reasoning and Acting Workflow for Automated R Analysis
 Version: 3.0.1
 Authors@R: person("Zaoqu", "Liu", 
                   email = "liuzaoqu@163.com", 
