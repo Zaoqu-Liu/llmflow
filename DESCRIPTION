@@ -1,15 +1,15 @@
 Package: llmflow
 Type: Package
-Title: LLM-R Integration with ReAct Workflow Automation
+Title: 'LLM'-R Integration with 'ReAct' Workflow Automation
 Version: 3.0.1
 Authors@R: person("Zaoqu", "Liu", 
                   email = "liuzaoqu@163.com", 
                   role = c("aut", "cre"),
                   comment = c(ORCID = "0000-0002-0452-742X"))
 Description: Provides a framework for integrating Large Language 
-    Models (LLMs) with R programming through workflow automation. 
-    Built on the ReAct (Reasoning and Acting) architecture, enables 
-    bi-directional communication between LLMs and R environments. 
+    Models ('LLMs') with R programming through workflow automation. 
+    Built on the 'ReAct' (Reasoning and Acting) architecture, enables 
+    bi-directional communication between 'LLMs' and R environments. 
     Features include automated code generation and execution, intelligent 
     error handling with retry mechanisms, persistent session management, 
     structured JSON output validation, and context-aware conversation management.
