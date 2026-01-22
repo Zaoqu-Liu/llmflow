@@ -165,7 +165,15 @@ retrieve_docs <- function(chat_obj,
 #' @export
 package_function_schema <- function(min_functions = 0,
                                     max_functions = 10,
-                                    description = "Array of ONLY the most critical, domain-specific functions that truly require documentation (exclude common functions like read.csv, order, mean). Return empty array if no specialized functions are needed.") {
+                                    description = NULL) {
+  # Default description
+
+  if (is.null(description)) {
+    description <- paste0(
+      "Array of critical domain-specific functions requiring documentation. ",
+      "Exclude common functions. Return empty array if none needed."
+    )
+  }
   # Validate inputs
   if (!is.numeric(min_functions) || min_functions < 0) {
     stop("min_functions must be a non-negative integer (>= 0)")

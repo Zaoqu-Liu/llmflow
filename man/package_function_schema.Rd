@@ -7,8 +7,7 @@
 package_function_schema(
   min_functions = 0,
   max_functions = 10,
-  description =
-    "Array of ONLY the most critical, domain-specific functions that truly require documentation (exclude common functions like read.csv, order, mean). Return empty array if no specialized functions are needed."
+  description = NULL
 )
 }
 \arguments{

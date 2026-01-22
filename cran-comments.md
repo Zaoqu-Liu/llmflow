@@ -2,6 +2,14 @@
 
 0 errors | 0 warnings | 3 notes
 
+## Spelling
+
+The following words flagged as possibly misspelled are correct technical terms:
+
+* **LLM** / **LLMs**: Large Language Model(s) - standard abbreviation in AI/ML field
+* **ReAct**: Reasoning and Acting - a specific AI architecture pattern 
+  (Yao et al., 2022, https://arxiv.org/abs/2210.03629)
+
 ## Test environments
 
 * local macOS (aarch64-apple-darwin20), R 4.4.0
